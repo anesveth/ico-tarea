@@ -1,9 +1,9 @@
 from flask import *
 from web3 import Web3
-environment='development'
+
 
 app = Flask(__name__)
-app.config['ENV'] = 'development'
+# app.config['ENV'] = 'development'
 
 web3infura = Web3(Web3.HTTPProvider('https://goerli.infura.io/v3/45ae0e73da314ca8b136c8712f74c69a'))
 owl_token_contract = '0xE8701a8832B09A0A15Fa166ba3A6Ea3e91d116e6'
@@ -46,6 +46,4 @@ def failure():
     return render_template('error.html')
 
 if __name__ == "__main__":
-    debuging=True
-    
-    app.run(host="0.0.0.0",port=8081,debug=True)
+    app.run(host="192.168.1.130",port=8763)
